@@ -12,6 +12,8 @@ A modern, Valorant-themed developer portfolio built with **Next.js 15**, **React
 
 ## Preview
 
+### Desktop
+
 | Welcome Animation |
 |:---:|
 | ![Welcome](readme_img/welcome.png) |
@@ -23,6 +25,16 @@ A modern, Valorant-themed developer portfolio built with **Next.js 15**, **React
 | Experience | Contact Form |
 |:---:|:---:|
 | ![Experience](readme_img/experience.png) | ![Contact](readme_img/contact.png) |
+
+### Mobile
+
+| Welcome | Hero | Projects |
+|:---:|:---:|:---:|
+| ![Mobile Welcome](readme_img/mobile-welcome.jpg) | ![Mobile Hero](readme_img/mobile-hero.jpg) | ![Mobile Project](readme_img/mobile-project.jpg) |
+
+| Experience | Skills | Contact |
+|:---:|:---:|:---:|
+| ![Mobile Experience](readme_img/mobile-experience.jpg) | ![Mobile Skills](readme_img/mobile-skills.jpg) | ![Mobile Contact](readme_img/mobile-contact.jpg) |
 
 ---
 
