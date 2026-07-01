@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Valorant-Themed Colors */
+  --color-primary: #FF4655;          /* Valorant red */
+  --color-primary-dark: #D63A47;     /* Darker red for hover */
+  --color-background: #0F1923;       /* Valorant dark navy */
+  --color-background-alt: #1A2634;   /* Slightly lighter navy */
+  --color-neutral-white: #ECE8E1;    /* Valorant warm white/cream */
+  --color-neutral-offwhite: #8B978F; /* Muted sage text */
+  --color-neutral-dark-gray: #2C3E4A;/* Borders, dividers — teal-gray */
+  --color-neutral-dark: #162029;     /* Icon button backgrounds */
+  --color-neutral-card: #141E27;     /* Card backgrounds */
+  --color-neutral-black: #0A1018;    /* Deepest dark */
+  --color-accent-teal: #17DEA6;      /* Valorant teal accent */
+  --color-accent-cream: #FFF4E0;     /* Warm highlight */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Fonts */
+  --font-display: var(--font-bebas), sans-serif;
+  --font-body: var(--font-manrope), sans-serif;
+
+  /* Border radius — sharp and angular like Valorant UI */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-full: 100px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-neutral-white);
+  font-family: var(--font-body);
+}
+
+/* Focus visible styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up-delayed {
+  0%,
+  30% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-slide-up-delayed {
+  animation: slide-up-delayed 1s ease-out forwards;
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s ease-in-out infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-from-right 0.4s ease-in-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-from-left 0.4s ease-in-out forwards;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Custom scrollbar - Valorant feel */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-dark-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
